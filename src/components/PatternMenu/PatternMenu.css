@@ -1,0 +1,147 @@
+.pattern-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.pattern-name-container {
+  min-width: 150px;
+}
+
+.pattern-name {
+  color: #e0e0e0;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background: rgba(15, 52, 96, 0.3);
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pattern-name:hover {
+  border-color: #00adb5;
+  background: rgba(15, 52, 96, 0.5);
+}
+
+.pattern-name-input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: rgba(15, 52, 96, 0.5);
+  color: #e0e0e0;
+  border: 2px solid #00adb5;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+}
+
+.pattern-menu-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pattern-menu-button {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #00adb5 0%, #007a82 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 173, 181, 0.3);
+  white-space: nowrap;
+}
+
+.pattern-menu-button:hover {
+  background: linear-gradient(135deg, #00d4dd 0%, #00adb5 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 173, 181, 0.4);
+}
+
+.pattern-menu-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 2px solid #0f3460;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  z-index: 100;
+  min-width: 180px;
+  animation: slideDown 0.2s;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  color: #e0e0e0;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropdown-menu button:hover {
+  background: rgba(0, 173, 181, 0.2);
+  color: #00d4dd;
+}
+
+.menu-divider {
+  height: 1px;
+  background: #0f3460;
+  margin: 0.25rem 0;
+}
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+}
+
+@media (max-width: 768px) {
+  .pattern-menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .pattern-name-container {
+    min-width: unset;
+  }
+
+  .pattern-menu-buttons {
+    justify-content: space-between;
+  }
+
+  .pattern-menu-button {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
+}

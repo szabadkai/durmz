@@ -1,0 +1,124 @@
+.transport {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-bottom: 2px solid #0f3460;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.transport-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.transport-button {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #00adb5 0%, #007a82 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 173, 181, 0.3);
+}
+
+.transport-button:hover {
+  background: linear-gradient(135deg, #00d4dd 0%, #00adb5 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 173, 181, 0.4);
+}
+
+.transport-button:active {
+  transform: translateY(0);
+}
+
+.transport-button.playing {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.transport-button.secondary {
+  background: linear-gradient(135deg, #533483 0%, #3d2659 100%);
+  box-shadow: 0 2px 8px rgba(83, 52, 131, 0.3);
+}
+
+.transport-button.secondary:hover {
+  background: linear-gradient(135deg, #6b43a8 0%, #533483 100%);
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3); }
+  50% { box-shadow: 0 2px 12px rgba(255, 107, 107, 0.6); }
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.transport-input {
+  width: 70px;
+  padding: 0.5rem;
+  background: #0f3460;
+  color: white;
+  border: 1px solid #00adb5;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.transport-input:focus {
+  outline: none;
+  border-color: #00d4dd;
+  box-shadow: 0 0 0 2px rgba(0, 173, 181, 0.2);
+}
+
+.transport-slider {
+  width: 120px;
+  height: 6px;
+  border-radius: 3px;
+  background: #0f3460;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.transport-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #00adb5;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.transport-slider::-webkit-slider-thumb:hover {
+  background: #00d4dd;
+  transform: scale(1.2);
+}
+
+.transport-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #00adb5;
+  cursor: pointer;
+  border: none;
+}
+
+.transport-value {
+  min-width: 40px;
+  color: #00adb5;
+  font-weight: 600;
+}
