@@ -37,7 +37,6 @@ export class HiHatSynth extends BaseDrumSynth {
     velocity: number,
     params?: Partial<SynthParameters>
   ): void {
-    const pitch = params?.pitch ?? this.getParameter('pitch', 8000);
     const decay = params?.decay ?? this.getParameter('decay', 0.05);
     const tone = params?.tone ?? this.getParameter('tone', 0.7);
     const color = (params as any)?.color ?? this.getParameter('color', 8000);

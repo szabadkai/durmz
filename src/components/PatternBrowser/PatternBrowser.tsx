@@ -84,7 +84,7 @@ export const PatternBrowser: React.FC<PatternBrowserProps> = ({ isOpen, onClose 
 
                   {/* Visual preview of active steps */}
                   <div className="pattern-preview">
-                    {pattern.tracks.slice(0, 4).map((track, trackIndex) => (
+                    {pattern.tracks.slice(0, 4).map((track) => (
                       <div key={track.id} className="preview-track">
                         {track.steps.map((step, stepIndex) => (
                           <div

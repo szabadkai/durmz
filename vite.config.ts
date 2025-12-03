@@ -5,13 +5,14 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
+    outDir: 'docs',
     rollupOptions: {
       output: {
-        manualChunks: {
-          'synthesis-core': ['./src/synthesis/engines'],
-          'audioworklet': ['./src/audioworklet'],
-          'midi': ['./src/midi'],
-          'ui-components': ['./src/components']
+        manualChunks(id) {
+          if (id.includes('/synthesis/engines/')) return 'synthesis-core';
+          if (id.includes('/audioworklet/')) return 'audioworklet';
+          if (id.includes('/midi/')) return 'midi';
+          if (id.includes('/components/')) return 'ui-components';
         }
       }
     },

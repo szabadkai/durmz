@@ -126,9 +126,10 @@ export class KickSynth extends BaseDrumSynth {
   /**
    * Create saturation curve for waveshaper
    */
-  private createSaturationCurve(amount: number): Float32Array {
+  private createSaturationCurve(amount: number): Float32Array<ArrayBuffer> {
     const samples = 4096;
-    const curve = new Float32Array(samples);
+    const buffer = new ArrayBuffer(samples * 4);
+    const curve = new Float32Array<ArrayBuffer>(buffer);
     const deg = Math.PI / 180;
 
     for (let i = 0; i < samples; i++) {

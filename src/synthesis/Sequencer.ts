@@ -1,6 +1,6 @@
 // Sequencer engine with precise timing using Web Audio API
 
-import { Pattern, Track } from '../types/pattern';
+import { Pattern } from '../types/pattern';
 import { audioEngine } from './AudioEngine';
 
 export class Sequencer {
@@ -84,7 +84,7 @@ export class Sequencer {
     const hasSolo = this.pattern.tracks.some(track => track.solo);
 
     // Trigger each track's step
-    this.pattern.tracks.forEach((track, trackIndex) => {
+    this.pattern.tracks.forEach((track) => {
       const stepData = track.steps[step];
 
       if (!stepData.active) return;
@@ -93,10 +93,6 @@ export class Sequencer {
 
       // Apply probability
       if (Math.random() > stepData.probability) return;
-
-      // Apply micro-timing offset (convert ms to seconds)
-      const microOffset = stepData.microTiming / 1000;
-      const triggerTime = time + microOffset;
 
       // Trigger the drum with velocity and current track parameters
       const velocity = stepData.velocity * track.volume;

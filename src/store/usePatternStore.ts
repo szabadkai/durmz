@@ -2,7 +2,7 @@
 
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
-import { Pattern, Track, StepData, SynthParameters } from '../types/pattern';
+import { Pattern, Track } from '../types/pattern';
 import { patternStorage } from '../utils/patternStorage';
 
 interface PatternState {
@@ -56,7 +56,7 @@ const createDefaultPattern = (): Pattern => {
 
   // Initialize 16 steps for each track
   defaultTracks.forEach(track => {
-    track.steps = Array.from({ length: 16 }, (_, i) => ({
+    track.steps = Array.from({ length: 16 }, () => ({
       active: false,
       velocity: 100,
       probability: 1.0,
@@ -156,7 +156,7 @@ export const usePatternStore = create<PatternState>()(
     randomizePattern: () =>
       set((state) => {
         state.pattern.tracks.forEach((track, trackIndex) => {
-          track.steps.forEach((step, stepIndex) => {
+          track.steps.forEach((step) => {
             // Different densities for different drums
             const density = trackIndex === 0 ? 0.3 : // Kick - sparse
                           trackIndex === 1 ? 0.2 : // Snare - sparse

@@ -8,7 +8,6 @@ import { RimSynth } from './engines/RimSynth';
 import { TomSynth } from './engines/TomSynth';
 import { PercSynth } from './engines/PercSynth';
 import { BaseDrumSynth } from './engines/BaseDrumSynth';
-import { Track } from '../types/pattern';
 
 export class AudioEngine {
   private context: AudioContext | null = null;

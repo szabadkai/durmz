@@ -41,8 +41,6 @@ export class SnareSynth extends BaseDrumSynth {
     velocity: number,
     params?: Partial<SynthParameters>
   ): void {
-    const pitch = params?.pitch ?? this.getParameter('pitch', 200);
-    const decay = params?.decay ?? this.getParameter('decay', 0.15);
     const tone = params?.tone ?? this.getParameter('tone', 0.5);
     const bodyFreq = (params as any)?.bodyFreq ?? this.getParameter('bodyFreq', 250);
     const noiseLevel = (params as any)?.noiseLevel ?? this.getParameter('noiseLevel', 0.7);
